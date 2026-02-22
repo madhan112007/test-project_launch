@@ -9,7 +9,7 @@ console = Console()
 
 
 @click.group()
-@click.version_option(version="1.0.1")
+@click.version_option(version="1.0.2")
 def main():
     """ProjectLaunch - Simple GitHub Push Tool"""
     pass

@@ -1,4 +1,4 @@
-# ProjectLaunch 🚀
+# ProjectLaunch
 
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -11,18 +11,18 @@ Push your projects to GitHub with a single command. No complex git commands need
 
 ---
 
-## 🎯 What Does It Do?
+## What Does It Do?
 
 ProjectLaunch simplifies pushing your code to GitHub:
-- ✅ Automatically initializes git repository
-- ✅ Adds all your files
-- ✅ Creates a commit with your message
-- ✅ Pushes to your GitHub repository
-- ✅ All in one command!
+- Automatically initializes git repository
+- Adds all your files
+- Creates a commit with your message
+- Pushes to your GitHub repository
+- All in one command
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 pip install projectlaunch
@@ -34,7 +34,7 @@ pip install projectlaunch
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Basic Usage (Interactive)
 
@@ -48,11 +48,11 @@ The tool will ask you:
 1. **GitHub repository URL** - Example: `https://github.com/username/my-project`
 2. **Commit message** - Example: `Initial commit` or `Added new features`
 
-That's it! Your code is now on GitHub! 🎉
+That's it! Your code is now on GitHub!
 
 ---
 
-## 💡 Usage Examples
+## Usage Examples
 
 ### Example 1: Interactive Mode (Recommended for Beginners)
 
@@ -72,11 +72,11 @@ Enter commit message:
 Commit message [Initial commit]: Added homepage
 
 Pushing to GitHub...
-✓ Initializing git...
-✓ Adding files...
-✓ Committing: Added homepage
-✓ Setting remote...
-✓ Pushing...
+Initializing git...
+Adding files...
+Committing: Added homepage
+Setting remote...
+Pushing...
 
 Successfully pushed!
 Repository: https://github.com/username/my-project
@@ -105,7 +105,7 @@ pl push --path /path/to/your/project --repo https://github.com/username/repo
 
 ---
 
-## 📖 Command Reference
+## Command Reference
 
 ### Main Command
 
@@ -132,7 +132,7 @@ projectlaunch push   # Full command name (same as 'pl push')
 
 ---
 
-## 🎓 Step-by-Step Tutorial
+## Step-by-Step Tutorial
 
 ### First Time Setup
 
@@ -162,11 +162,11 @@ cd path/to/your/project
 pl push
 ```
 
-Enter the repository URL you copied in Step 1, and you're done! 🎉
+Enter the repository URL you copied in Step 1, and you're done!
 
 ---
 
-## 🔧 Common Scenarios
+## Common Scenarios
 
 ### Scenario 1: First Time Pushing a New Project
 
@@ -192,12 +192,12 @@ pl push -r https://github.com/username/my-existing-project -m "Updated features"
 
 ```bash
 pl push -r https://github.com/username/repo
-# Uses default message: "Initial commit"
+# Uses default message: "Update"
 ```
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 ### Q: Do I need to create a GitHub repository first?
 **A:** Yes! Create an empty repository on GitHub first, then use ProjectLaunch to push your code.
@@ -220,7 +220,7 @@ pl push -r https://github.com/username/repo
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Error: "Git not installed"
 
@@ -247,7 +247,7 @@ git config --global user.email "your@email.com"
 
 ---
 
-## 🎯 Real-World Examples
+## Real-World Examples
 
 ### Example 1: Student Project
 
@@ -280,11 +280,11 @@ pl push -r https://github.com/company/work-project -m "Day 5: Implemented login 
 
 ---
 
-## 📝 Tips & Best Practices
+## Tips & Best Practices
 
 1. **Use descriptive commit messages**
-   - ❌ Bad: `"update"`
-   - ✅ Good: `"Added user authentication feature"`
+   - Bad: `"update"`
+   - Good: `"Added user authentication feature"`
 
 2. **Push regularly**
    - Don't wait until the end of the project
@@ -306,7 +306,7 @@ pl push -r https://github.com/company/work-project -m "Day 5: Implemented login 
 
 ---
 
-## 🆘 Need Help?
+## Need Help?
 
 - **GitHub:** [madhan112007/test-project_launch](https://github.com/madhan112007/test-project_launch)
 - **Issues:** [Report bugs](https://github.com/madhan112007/test-project_launch/issues)
@@ -315,19 +315,17 @@ pl push -r https://github.com/company/work-project -m "Day 5: Implemented login 
 
 ---
 
-## 📄 License
+## License
 
 MIT License - Free to use for everyone!
 
 ---
 
-## 🙏 Credits
+## Credits
 
 Built for students and developers who want a simpler way to push code to GitHub.
 
----
-
-**Made with ❤️ by Madhan**
+**Made with care by Madhan**
 
 ---
 
@@ -352,4 +350,4 @@ pl --version
 
 ---
 
-**Happy Coding! 🚀**
+**Happy Coding!**
