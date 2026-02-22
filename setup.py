@@ -1,8 +1,18 @@
 from setuptools import setup, find_packages
+from pathlib import Path
+
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text(encoding='utf-8')
 
 setup(
     name="projectlaunch",
-    version="1.0.0",
+    version="1.0.1",
+    description="Simple GitHub Push Tool for Students & Developers",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    author="Madhan",
+    author_email="codethetrend@gmail.com",
+    url="https://github.com/madhan112007/test-project_launch",
     packages=find_packages(),
     install_requires=[
         "click>=8.0.0",
@@ -15,4 +25,13 @@ setup(
         ],
     },
     python_requires=">=3.8",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
 )

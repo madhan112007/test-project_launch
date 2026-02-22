@@ -1,5 +1,10 @@
 # ProjectLaunch 🚀
 
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![PyPI](https://img.shields.io/pypi/v/projectlaunch)
+![Downloads](https://img.shields.io/pypi/dm/projectlaunch)
+
 **Simple GitHub Push Tool for Students & Developers**
 
 Push your projects to GitHub with a single command. No complex git commands needed!
@@ -303,8 +308,10 @@ pl push -r https://github.com/company/work-project -m "Day 5: Implemented login 
 
 ## 🆘 Need Help?
 
-- **Issues:** Report bugs at [GitHub Issues](https://github.com/yourusername/projectlaunch/issues)
-- **Questions:** Ask on [Stack Overflow](https://stackoverflow.com) with tag `projectlaunch`
+- **GitHub:** [madhan112007/test-project_launch](https://github.com/madhan112007/test-project_launch)
+- **Issues:** [Report bugs](https://github.com/madhan112007/test-project_launch/issues)
+- **Email:** codethetrend@gmail.com
+- **PyPI:** [projectlaunch](https://pypi.org/project/projectlaunch/)
 
 ---
 
