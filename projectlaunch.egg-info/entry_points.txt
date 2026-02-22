@@ -1,0 +1,3 @@
+[console_scripts]
+pl = projectlaunch.cli:main
+projectlaunch = projectlaunch.cli:main
