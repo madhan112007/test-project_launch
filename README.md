@@ -320,7 +320,7 @@ Built for students and developers who want a simpler way to push code to GitHub.
 
 ---
 
-**Made with ❤️ for the developer community**
+**Made with ❤️ by Madhan**
 
 ---
 
