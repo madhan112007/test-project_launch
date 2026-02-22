@@ -19,13 +19,25 @@ class GitPusher:
     def push_to_github(self, repo_url: str = None, commit_message: str = None):
         """Push project to GitHub."""
         
-        if not repo_url:
+        # Check if git repo exists and has remote
+        existing_remote = None
+        if (self.project_path / ".git").exists():
+            try:
+                existing_remote = self._run_git("remote", "get-url", "origin")
+                console.print(f"[dim]Using existing remote: {existing_remote}[/dim]")
+            except Exception:
+                pass
+        
+        # Only ask for repo URL if not provided and no existing remote
+        if not repo_url and not existing_remote:
             console.print("[cyan]Enter your GitHub repository URL:[/cyan]")
             repo_url = Prompt.ask("Repository URL")
+        elif not repo_url:
+            repo_url = existing_remote
         
         if not commit_message:
             console.print("[cyan]Enter commit message:[/cyan]")
-            commit_message = Prompt.ask("Commit message", default="Initial commit")
+            commit_message = Prompt.ask("Commit message", default="Update")
         
         console.print(Panel(f"[bold cyan]Pushing to GitHub...[/bold cyan]"))
         
@@ -49,11 +61,13 @@ class GitPusher:
             if "nothing to commit" in str(e):
                 console.print("[yellow]No changes to commit[/yellow]")
         
-        console.print("[cyan]Setting remote...[/cyan]")
-        try:
-            self._run_git("remote", "add", "origin", repo_url)
-        except Exception:
-            self._run_git("remote", "set-url", "origin", repo_url)
+        # Only set remote if it doesn't exist
+        if not existing_remote:
+            console.print("[cyan]Setting remote...[/cyan]")
+            try:
+                self._run_git("remote", "add", "origin", repo_url)
+            except Exception:
+                self._run_git("remote", "set-url", "origin", repo_url)
         
         console.print("[cyan]Pushing...[/cyan]")
         try:
