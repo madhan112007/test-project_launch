@@ -8,19 +8,13 @@ from projectlaunch.core import GitPusher
 console = Console()
 
 
-@click.group()
-@click.version_option(version="1.0.2")
-def main():
-    """ProjectLaunch - Simple GitHub Push Tool"""
-    pass
-
-
-@main.command()
+@click.command()
+@click.version_option(version="1.0.4")
 @click.option("--repo", "-r", help="GitHub repository URL")
 @click.option("--message", "-m", help="Commit message")
 @click.option("--path", "-p", default=".", help="Project path")
-def push(repo, message, path):
-    """Push your project to GitHub"""
+def main(repo, message, path):
+    """ProjectLaunch - Simple GitHub Push Tool"""
     
     console.print("[bold cyan]ProjectLaunch - GitHub Push Tool[/bold cyan]\n")
     

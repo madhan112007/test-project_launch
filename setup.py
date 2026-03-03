@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text(encoding='utf-8')
 
 setup(
     name="projectlaunch",
-    version="1.0.2",
+    version="1.0.5",
     description="Simple GitHub Push Tool for Students & Developers",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -24,6 +24,7 @@ setup(
             "pl=projectlaunch.cli:main",
         ],
     },
+    py_modules=["projectlaunch.__main__"],
     python_requires=">=3.8",
     classifiers=[
         "Programming Language :: Python :: 3",

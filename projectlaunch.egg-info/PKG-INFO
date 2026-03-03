@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: projectlaunch
-Version: 1.0.2
+Version: 1.0.5
 Summary: Simple GitHub Push Tool for Students & Developers
 Home-page: https://github.com/madhan112007/test-project_launch
 Author: Madhan
@@ -60,16 +60,52 @@ pip install projectlaunch
 - Python 3.8 or higher
 - Git installed on your system ([Download Git](https://git-scm.com))
 
+**IMPORTANT: After Installation**
+
+If you see this warning during installation:
+```
+WARNING: The scripts pl.exe and projectlaunch.exe are installed in
+'C:\Users\YourName\AppData\Roaming\Python\Python310\Scripts'
+which is not on PATH.
+```
+
+**You have 2 options:**
+
+**Option 1 (Recommended): Use `python -m projectlaunch`**
+
+This works immediately without any configuration:
+```bash
+python -m projectlaunch
+```
+
+**Option 2: Fix PATH (One-time setup)**
+
+1. Copy the path from the warning message (e.g., `C:\Users\YourName\AppData\Roaming\Python\Python310\Scripts`)
+2. Press `Win + R`, type `sysdm.cpl`, press Enter
+3. Go to **Advanced** tab → **Environment Variables**
+4. Under **User Variables**, select **Path** → **Edit**
+5. Click **New** and paste the path
+6. Click **OK** everywhere
+7. **Close and reopen** Command Prompt
+8. Now `pl` will work
+
 ---
 
 ## Quick Start
+
+**Two ways to use ProjectLaunch:**
+
+1. **Short command:** `pl` (requires PATH setup)
+2. **Universal command:** `python -m projectlaunch` (works everywhere)
 
 ### Basic Usage (Interactive)
 
 Navigate to your project folder and run:
 
 ```bash
-pl push
+pl
+# OR if 'pl' not recognized:
+python -m projectlaunch
 ```
 
 The tool will ask you:
@@ -86,7 +122,7 @@ That's it! Your code is now on GitHub!
 
 ```bash
 cd my-project
-pl push
+pl
 ```
 
 **Output:**
@@ -115,12 +151,12 @@ Repository: https://github.com/username/my-project
 ### Example 2: With Command-Line Options (Faster)
 
 ```bash
-pl push --repo https://github.com/username/my-project --message "Initial commit"
+pl --repo https://github.com/username/my-project --message "Initial commit"
 ```
 
 **Short version:**
 ```bash
-pl push -r https://github.com/username/my-project -m "Initial commit"
+pl -r https://github.com/username/my-project -m "Initial commit"
 ```
 
 ---
@@ -128,7 +164,7 @@ pl push -r https://github.com/username/my-project -m "Initial commit"
 ### Example 3: Push from Different Directory
 
 ```bash
-pl push --path /path/to/your/project --repo https://github.com/username/repo
+pl --path /path/to/your/project --repo https://github.com/username/repo
 ```
 
 ---
@@ -138,7 +174,7 @@ pl push --path /path/to/your/project --repo https://github.com/username/repo
 ### Main Command
 
 ```bash
-pl push [OPTIONS]
+pl [OPTIONS]
 ```
 
 ### Options
@@ -155,7 +191,7 @@ pl push [OPTIONS]
 ```bash
 pl --version          # Show version
 pl --help            # Show all commands
-projectlaunch push   # Full command name (same as 'pl push')
+projectlaunch        # Full command name (same as 'pl')
 ```
 
 ---
@@ -187,7 +223,7 @@ cd path/to/your/project
 **Step 4: Push to GitHub**
 
 ```bash
-pl push
+pl
 ```
 
 Enter the repository URL you copied in Step 1, and you're done!
@@ -200,7 +236,7 @@ Enter the repository URL you copied in Step 1, and you're done!
 
 ```bash
 cd my-new-project
-pl push
+pl
 # Enter: https://github.com/username/my-new-project
 # Enter: Initial commit
 ```
@@ -211,7 +247,7 @@ pl push
 
 ```bash
 cd my-existing-project
-pl push -r https://github.com/username/my-existing-project -m "Updated features"
+pl -r https://github.com/username/my-existing-project -m "Updated features"
 ```
 
 ---
@@ -219,7 +255,7 @@ pl push -r https://github.com/username/my-existing-project -m "Updated features"
 ### Scenario 3: Quick Push with Default Message
 
 ```bash
-pl push -r https://github.com/username/repo
+pl -r https://github.com/username/repo
 # Uses default message: "Update"
 ```
 
@@ -249,6 +285,109 @@ pl push -r https://github.com/username/repo
 ---
 
 ## Troubleshooting
+
+### Issue: 'pl' is not recognized as an internal or external command
+
+**This is the most common issue on Windows!**
+
+**What happened:**
+After running `pip install projectlaunch`, you see:
+```
+WARNING: The scripts pl.exe and projectlaunch.exe are installed in
+'C:\Users\YourName\AppData\Roaming\Python\Python310\Scripts'
+which is not on PATH.
+```
+
+Then when you try `pl`, you get:
+```
+'pl' is not recognized as an internal or external command
+```
+
+**Why this happens:**
+Windows doesn't know where to find the `pl.exe` file because the Scripts folder is not in your system PATH.
+
+**SOLUTION 1 (Instant Fix - No Configuration Needed):**
+
+Use this command instead:
+```bash
+python -m projectlaunch
+```
+
+This works immediately on ANY Windows system, regardless of PATH configuration!
+
+**Examples:**
+```bash
+python -m projectlaunch                    # Interactive mode
+python -m projectlaunch -r URL -m "msg"   # With options
+python -m projectlaunch --help            # Show help
+python -m projectlaunch --version         # Show version
+```
+
+**SOLUTION 2 (Permanent Fix - One-time Setup):**
+
+Add the Scripts folder to your PATH:
+
+1. **Find your Scripts path** from the warning message. Common locations:
+   - `C:\Users\YourName\AppData\Roaming\Python\Python310\Scripts`
+   - `C:\Users\YourName\AppData\Roaming\Python\Python311\Scripts`
+   - `C:\Users\YourName\AppData\Roaming\Python\Python312\Scripts`
+
+2. **Add to PATH:**
+   - Press `Win + R`
+   - Type `sysdm.cpl` and press Enter
+   - Go to **Advanced** tab
+   - Click **Environment Variables**
+   - Under **User Variables**, select **Path**
+   - Click **Edit**
+   - Click **New**
+   - Paste your Scripts path
+   - Click **OK** on all windows
+
+3. **Restart Command Prompt** (IMPORTANT!)
+   - Close all Command Prompt windows
+   - Open a new Command Prompt
+   - Test: `pl --version`
+
+**After PATH fix, you can use:**
+```bash
+pl                    # Short command
+projectlaunch         # Full command
+python -m projectlaunch  # Also still works
+```
+
+---
+
+### Command not recognized: 'pl' is not recognized
+
+**Problem:** After installing, you get:
+```
+'pl' is not recognized as an internal or external command
+```
+
+**Solution 1 (Recommended):** Add Python Scripts to PATH
+
+1. Press `Win + R`, type `sysdm.cpl`, press Enter
+2. Go to **Advanced** tab → **Environment Variables**
+3. Under **User Variables**, select **Path** → **Edit**
+4. Click **New** and add:
+   ```
+   %APPDATA%\Python\Python312\Scripts
+   ```
+   (Replace `Python312` with your Python version)
+5. Click **OK** everywhere
+6. **Close and reopen** Command Prompt
+7. Test: `pl --version`
+
+**Solution 2 (Quick Workaround):** Use python -m
+
+If PATH fix doesn't work, you can always run:
+```bash
+python -m projectlaunch
+```
+
+This works without PATH configuration!
+
+---
 
 ### Error: "Git not installed"
 
@@ -282,7 +421,7 @@ git config --global user.email "your@email.com"
 ```bash
 # You just finished your college project
 cd final-year-project
-pl push -r https://github.com/student123/final-year-project -m "Completed project"
+pl -r https://github.com/student123/final-year-project -m "Completed project"
 ```
 
 ---
@@ -292,7 +431,7 @@ pl push -r https://github.com/student123/final-year-project -m "Completed projec
 ```bash
 # You built a quick prototype and want to share it
 cd prototype-app
-pl push
+pl
 # Enter repo URL and message when prompted
 ```
 
@@ -303,7 +442,7 @@ pl push
 ```bash
 # End of day, pushing your work
 cd work-project
-pl push -r https://github.com/company/work-project -m "Day 5: Implemented login feature"
+pl -r https://github.com/company/work-project -m "Day 5: Implemented login feature"
 ```
 
 ---
@@ -363,17 +502,27 @@ Built for students and developers who want a simpler way to push code to GitHub.
 # Install
 pip install projectlaunch
 
+# If you see PATH warning after install, use:
+python -m projectlaunch              # Works everywhere!
+
+# OR fix PATH once, then use:
+pl                                   # Short command
+
 # Basic usage
-pl push
+pl                                   # Interactive mode
+python -m projectlaunch              # Alternative (no PATH needed)
 
 # With options
-pl push -r https://github.com/user/repo -m "Commit message"
+pl -r https://github.com/user/repo -m "Commit message"
+python -m projectlaunch -r URL -m "msg"  # Alternative
 
 # Get help
 pl --help
+python -m projectlaunch --help
 
 # Check version
 pl --version
+python -m projectlaunch --version
 ```
 
 ---

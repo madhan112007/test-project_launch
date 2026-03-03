@@ -2,6 +2,7 @@ README.md
 pyproject.toml
 setup.py
 projectlaunch/__init__.py
+projectlaunch/__main__.py
 projectlaunch/cli.py
 projectlaunch/core.py
 projectlaunch.egg-info/PKG-INFO
